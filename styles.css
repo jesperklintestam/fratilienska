@@ -135,15 +135,5 @@ nav ul {
 .info-text {
   font-size: 0.8em; }
 
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 200px;
-  width: 600px;
-  max-width: 100vw; }
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 200px;
-  width: 600px; }
+.map iframe {
+  max-width: 100%; }
