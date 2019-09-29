@@ -48,6 +48,10 @@ nav {
     color: $brown-medium;
     text-decoration: none;
 
+    @media (max-width: 600px) {
+      font-size: 0.8em;
+    }
+
     &:hover {
       text-decoration: none;
       color: $brown-dark;
@@ -61,6 +65,12 @@ a {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+h1 {
+  @media (max-width: 600px) {
+    font-size: 1.5em;
   }
 }
 
@@ -123,17 +133,22 @@ nav ul {
   display: grid;
   grid: {
     template-columns: 1fr 0.4fr 0.8fr 1fr 1fr;
-    template-rows: 38% 0.3fr 1fr;
+    template-rows: minmax(51px, 1.2fr) minmax(11px, 0.3fr) minmax(62px, 1.3fr);
     gap: 4px;
     template-areas: "first second  third   fourth fifth" "first seventh seventh fourth fifth"
       "sixth seventh seventh eight  fifth";
   }
   place-content: center;
   position: relative;
+  max-height: 380px;
 }
 
-.gallery__image img {
-  height: 100%;
+.gallery__image {
+  position: relative;
+
+  img {
+    height: 100%;
+  }
 }
 
 .gallery__image--1 {
@@ -174,6 +189,12 @@ nav ul {
     line-height: 1.2;
     font-size: calc(0.5vw + 7px);
     pointer-events: none;
+  }
+}
+
+.simple-gallery img {
+  @media (min-width: 600px) {
+    max-height: 30vw;
   }
 }
 

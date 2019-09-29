@@ -30,6 +30,9 @@ nav {
     padding: 6px;
     color: #af968c;
     text-decoration: none; }
+    @media (max-width: 600px) {
+      nav a {
+        font-size: 0.8em; } }
     nav a:hover {
       text-decoration: none;
       color: #74262c; }
@@ -39,6 +42,10 @@ a {
   color: #74262c; }
   a:hover {
     text-decoration: underline; }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5em; } }
 
 p,
 span {
@@ -87,14 +94,17 @@ nav ul {
 .gallery {
   display: grid;
   grid-template-columns: 1fr 0.4fr 0.8fr 1fr 1fr;
-  grid-template-rows: 38% 0.3fr 1fr;
+  grid-template-rows: minmax(51px, 1.2fr) minmax(11px, 0.3fr) minmax(62px, 1.3fr);
   grid-gap: 4px;
   grid-template-areas: "first second  third   fourth fifth" "first seventh seventh fourth fifth" "sixth seventh seventh eight  fifth";
   place-content: center;
-  position: relative; }
+  position: relative;
+  max-height: 380px; }
 
-.gallery__image img {
-  height: 100%; }
+.gallery__image {
+  position: relative; }
+  .gallery__image img {
+    height: 100%; }
 
 .gallery__image--1 {
   grid-area: first; }
@@ -128,6 +138,10 @@ nav ul {
     line-height: 1.2;
     font-size: calc(0.5vw + 7px);
     pointer-events: none; }
+
+@media (min-width: 600px) {
+  .simple-gallery img {
+    max-height: 30vw; } }
 
 .image--vertical {
   width: 25%; }
