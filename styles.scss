@@ -71,7 +71,7 @@ span {
 
 p {
   text-transform: none;
-  max-width: 800px;
+  max-width: 500px;
   padding: 10px 30px;
   line-height: 1.5;
 }
@@ -85,18 +85,22 @@ img {
 //Styling classes
 .flex-row {
   display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  position: relative;
 }
 
 //Specific classes
 .copyright {
   font-family: $font-serious;
   font-size: 0.5em;
-  grid-column-start: 5;
-  text-align: right;
+  position: absolute;
+  right: 3px;
+  bottom: -13px;
 }
 
 .main-content {
-  margin-top: 30px;
+  padding-top: 30px;
 
   .main-content__section:nth-child(even) {
     background-color: $brown-light;
@@ -104,10 +108,10 @@ img {
 }
 
 .main-content__section {
-  padding: 2% 0;
+  padding: calc(0.8% + 20px) 0;
 }
 
-.main-content__section > *,
+.main-content__section > p,
 nav ul {
   margin: 0 auto;
   @media (min-width: 1200px) {
@@ -125,14 +129,11 @@ nav ul {
       "sixth seventh seventh eight  fifth";
   }
   place-content: center;
+  position: relative;
 }
 
-.gallery__image {
-  position: relative;
-
-  img {
-    height: 100%;
-  }
+.gallery__image img {
+  height: 100%;
 }
 
 .gallery__image--1 {
