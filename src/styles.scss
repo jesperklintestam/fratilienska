@@ -1,3 +1,4 @@
+/* autoprefixer grid: on */
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower|Rajdhani:400,700&display=swap");
 
 $font-playful: "Indie Flower", cursive;
@@ -27,7 +28,7 @@ nav {
   top: 0;
   background-color: #fff;
   width: 100vw;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.3);
   cursor: default;
   padding: 0;
   z-index: 1;
@@ -49,7 +50,7 @@ nav {
     text-decoration: none;
 
     @media (max-width: 600px) {
-      font-size: 0.8em;
+      font-size: calc(0.3em + 2.5vw);
     }
 
     &:hover {
@@ -86,6 +87,16 @@ p {
   line-height: 1.5;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  cursor: default;
+}
+
 img {
   object-fit: cover;
   width: 100%;
@@ -97,13 +108,18 @@ img {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.position-relative {
   position: relative;
 }
 
 //Specific classes
 .copyright {
   font-family: $font-serious;
-  font-size: 0.5em;
+  font-size: 0.6em;
   position: absolute;
   right: 3px;
   bottom: -13px;
@@ -131,19 +147,22 @@ nav ul {
 
 .gallery {
   display: grid;
-  grid: {
-    template-columns: 1fr 0.4fr 0.8fr 1fr 1fr;
-    template-rows: minmax(51px, 1.2fr) minmax(11px, 0.3fr) minmax(62px, 1.3fr);
-    gap: 4px;
-    template-areas: "first second  third   fourth fifth" "first seventh seventh fourth fifth"
-      "sixth seventh seventh eight  fifth";
-  }
+  grid-template-columns: 1fr 0.4fr 0.8fr 1fr 1fr;
+  grid-template-rows: minmax(51px, 1.2fr) minmax(11px, 0.3fr) minmax(62px, 1.3fr);
+  gap: 4px;
+  grid-template-areas:
+    "first second  third   fourth fifth" "first seventh seventh fourth fifth"
+    "sixth seventh seventh eighth  fifth";
   place-content: center;
   position: relative;
-  max-height: 380px;
+
+  @media (min-width: 992px) {
+    max-height: calc(100px + 23vw);
+  }
 }
 
 .gallery__image {
+  // For the overlays/captions
   position: relative;
 
   img {
@@ -155,6 +174,14 @@ nav ul {
   grid-area: first;
 }
 
+.gallery__image--2 {
+  grid-area: second;
+}
+
+.gallery__image--3 {
+  grid-area: third;
+}
+
 .gallery__image--4 {
   grid-area: fourth;
 }
@@ -163,8 +190,16 @@ nav ul {
   grid-area: fifth;
 }
 
+.gallery__image--6 {
+  grid-area: sixth;
+}
+
 .gallery__image--7 {
   grid-area: seventh;
+}
+
+.gallery__image--8 {
+  grid-area: eighth;
 }
 
 .image__caption {
@@ -192,9 +227,18 @@ nav ul {
   }
 }
 
-.simple-gallery img {
+.simple-gallery {
+  overflow: hidden;
+
   @media (min-width: 600px) {
-    max-height: 30vw;
+    max-height: calc(60px + 23vw);
+  }
+
+  //IE image sizing
+  @media screen\0 {
+    img {
+      height: 100%;
+    }
   }
 }
 

@@ -3,15 +3,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-
-  <title>Frantilienska - Italienska med Francitella</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="styles.css?v=1.0">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fratilienska - Italienska med Francitella</title>
+  <link rel="stylesheet" href="styles.scss">
 </head>
 
 <body>
@@ -85,8 +81,7 @@
             <span>Skulle du vilja besöka ... och kunna prata med personalen på hotellet på italienska?</span>
           </div>
         </div>
-        <div class="copyright">© Jesper Klintestam</small>
-        </div>
+        <small class="copyright">© Jesper Klintestam</small>
       </div>
     </div>
     <div class="main-content__section">
@@ -128,10 +123,12 @@
     </div>
     <div id="about" class="main-content__section">
       <h1>Om mig</h1>
-      <div class="flex-row simple-gallery">
-        <img class="image--vertical" src="images/_1090416.jpg">
-        <img class="image--horizontal" src="images/_1010444.jpg">
-        <img class="image--vertical" src="images/_1050799.jpg">
+      <div class="position-relative">
+        <div class="flex-row simple-gallery">
+          <img class="image--vertical" src="images/_1090416.jpg">
+          <img class="image--horizontal" src="images/_1010444.jpg">
+          <img class="image--vertical" src="images/_1050799.jpg">
+        </div>
         <small class="copyright">© Jesper Klintestam</small>
       </div>
       <div class="flex-row">
@@ -173,7 +170,6 @@
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyClrI_8TiuAfURDyFRSwBQ28OGXMtOnfS4&q=Sundbybergs+bibliotek"
           allowfullscreen></iframe>
       </div>
-
     </div>
     <div id="contact" class="main-content__section">
       <h1>Kontakta mig</h1>
@@ -184,7 +180,6 @@
         Tel: 0700-602068
       </p>
     </div>
-  </div>
   </div>
   <!-- <script src="js/scripts.js"></script> -->
 </body>
