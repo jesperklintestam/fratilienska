@@ -8,6 +8,7 @@ $brown-light: #f1dbd3;
 $brown-medium: #af968c;
 $brown-medium-transparent: rgba(175, 150, 140, 0.6);
 $brown-dark: #74262c;
+$navbar-height: calc(0.6vw + 27px);
 
 //Generic elements
 html {
@@ -33,6 +34,7 @@ nav {
   padding: 0;
   z-index: 1;
   text-align: left;
+  min-height: $navbar-height;
 
   ul {
     list-style: none;
@@ -45,9 +47,11 @@ nav {
 
   a {
     display: block;
-    padding: 6px;
+    margin: 6px;
     color: $brown-medium;
     text-decoration: none;
+    transition: border 200ms;
+    border-bottom: 1px solid transparent;
 
     @media (max-width: 600px) {
       font-size: calc(0.3em + 2.5vw);
@@ -95,6 +99,7 @@ h4,
 h5,
 h6 {
   cursor: default;
+  margin: 0;
 }
 
 img {
@@ -103,17 +108,26 @@ img {
   vertical-align: middle;
 }
 
+footer {
+  height: 10vw;
+}
+
 //Styling classes
 .flex-row {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-content: center;
-  position: relative;
 }
 
 .position-relative {
   position: relative;
+}
+
+//Added with js
+.current-section {
+  font-weight: bold;
+  border-bottom: 1px solid $brown-dark;
 }
 
 //Specific classes
@@ -126,18 +140,16 @@ img {
 }
 
 .main-content {
-  padding-top: 30px;
-
-  .main-content__section:nth-child(even) {
+  > section:nth-child(odd) {
     background-color: $brown-light;
   }
 }
 
-.main-content__section {
-  padding: calc(0.8% + 20px) 0;
+.main-content section {
+  padding: $navbar-height 0;
 }
 
-.main-content__section > p,
+.main-content section > p,
 nav ul {
   margin: 0 auto;
   @media (min-width: 1200px) {
@@ -155,9 +167,15 @@ nav ul {
     "sixth seventh seventh eighth  fifth";
   place-content: center;
   position: relative;
+  background-color: white;
+  padding: $navbar-height 0;
 
   @media (min-width: 992px) {
     max-height: calc(100px + 23vw);
+  }
+
+  .copyright {
+    bottom: calc(#{$navbar-height} - 1.2em);
   }
 }
 
@@ -229,6 +247,7 @@ nav ul {
 
 .simple-gallery {
   overflow: hidden;
+  margin: $navbar-height 0;
 
   @media (min-width: 600px) {
     max-height: calc(60px + 23vw);
@@ -254,6 +273,6 @@ nav ul {
   font-size: 0.8em;
 }
 
-.map iframe {
+.map-container iframe {
   max-width: 100%;
 }
