@@ -120,10 +120,6 @@ footer {
   align-content: center;
 }
 
-.position-relative {
-  position: relative;
-}
-
 //Added with js
 .current-section {
   font-weight: bold;
@@ -139,17 +135,17 @@ footer {
   bottom: -13px;
 }
 
-.main-content {
+main {
   > section:nth-child(odd) {
     background-color: $brown-light;
   }
 }
 
-.main-content section {
+main section {
   padding: $navbar-height 0;
 }
 
-.main-content section > p,
+main section > p,
 nav ul {
   margin: 0 auto;
   @media (min-width: 1200px) {
@@ -246,11 +242,18 @@ nav ul {
 }
 
 .simple-gallery {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.simple-gallery__images {
   overflow: hidden;
   margin: $navbar-height 0;
+  align-items: center;
 
   @media (min-width: 600px) {
-    max-height: calc(60px + 23vw);
+    max-height: calc(320px + 4vw);
   }
 
   //IE image sizing
