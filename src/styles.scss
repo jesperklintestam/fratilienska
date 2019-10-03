@@ -250,14 +250,14 @@ nav ul {
 .simple-gallery__images {
   overflow: hidden;
   margin: $navbar-height 0;
-  align-items: center;
-
+  
   @media (min-width: 600px) {
     max-height: calc(320px + 4vw);
   }
-
+  
   //IE image sizing
   @media screen\0 {
+    align-items: center;
     img {
       height: 100%;
     }
